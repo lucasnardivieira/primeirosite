@@ -1,31 +1,122 @@
+/*reset do CSS*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
     background-image: url('https://www.ufrgs.br/setorsuinos/wp-content/uploads/2019/07/fundo-azul-degrade-2-1024x564.jpg');
     background-size: auto 100vh;  
     font-family: Verdana;
+    font-size: 10px;
   }
+
+/* se a tela tiver pelo menos a largura de 400 px esses estilos serão aplicados*/
+@media(min-width: 400px){
+  body{
+    font-size: 14px;
+  }
+
+@media(min-width: 600px){
+body{
+  font-size: 18px;
+  font-family: 'Roboto Mono', monospace;
+}
+}
+
+header{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
   .menu{
     background: white;
+    position: fixed;
+    top: 0;
+    width: 100vw;
   }
+
+  .menu a{
+    color: red;
+    padding: 10px 20px;
+    display: block;
+  }
+
   a{
     text-decoration: none;
     color: teal;
   }
+
   a:hover{
     text-decoration: underline;
     color: red;
   }
+
   .menu li{
     list-style: none;
   }
+
   .menu ul{
     display: flex;
     justify-content: space-around;
+    padding: 0px;
   }
+
   .siteSubtitle,
   .siteTitle{
     color: whitesmoke;
     text-align: center;
   }
+
+  .siteTitle{
+    font-size: 4em;
+    font-family: 'Press Start 2P', cursive;
+  }
+
   .siteSubtitle{
-    font-style: italic;
+    font-family: 'Indie Flower', cursive;
+    line-height: 1.8em;
+  }
+
+  .portfolio {
+    padding: 2em;
+  }
+
+  .portfolio h2{
+    font-family: 'Press Start 2P', cursive;
+    color: whitesmoke;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+  }
+
+  .portfolio .grid{
+    display: grid;
+    gap: 1em;
+  }
+
+  @media(min-width: 560px){
+    .portfolio .grid{
+    grid-template-columns: 240px 240px;
+    }
+  }
+
+  @media(min-width: 880px){
+    .portfolio .grid{
+    grid-template-columns: 240px 240px 240px;
+    justify-content: center;
+    align-content: center;
+    height: calc(100vh - 8em - 48px);
+    }
+  }
+
+  .portfolio figure{
+    text-align: center;
+  }
+  .img-portfolio{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
   }
